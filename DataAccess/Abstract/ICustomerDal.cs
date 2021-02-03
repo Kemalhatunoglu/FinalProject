@@ -5,9 +5,7 @@ using System.Text;
 
 namespace DataAccess.Abstract
 {
-    // Interface methodları default olarak public olarak tanımlıdır.
-    public interface IProductDal:IEntityRepository<Product>
+    public interface ICustomerDal:IEntityRepository<Customer>
     {
-     
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
 using System;
 
@@ -11,9 +12,9 @@ namespace ConsoleUI
             // Abstract klasötlerin içerisine referans tutucular konulacak yani soyut classlarımızı koyacağız.
             // Concrete klasörlerine somut classlarımızı modellerimizi koyacağız.
 
-            ProductManager productManager = new ProductManager(new InMemoryProductDal());
+            ProductManager productManager = new ProductManager(new EfProductDal());
 
-            foreach (var item in productManager.GetAll())
+            foreach (var item in productManager.GetAllByCategoryId(2))
             {
                 Console.WriteLine(item.ProductName);
             }
