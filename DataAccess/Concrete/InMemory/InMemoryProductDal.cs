@@ -1,5 +1,6 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace DataAccess.Concrete.InMemory
                     ProductId =1,
                     CategoryId = 1,
                     ProductName="Bardak",
-                    UnitInStock=15,
+                    UnitsInStock=15,
                     UnitPrice=15
                 },
                 new Product
@@ -29,7 +30,7 @@ namespace DataAccess.Concrete.InMemory
                     ProductId =2,
                     CategoryId = 1,
                     ProductName="Kamera",
-                    UnitInStock=3,
+                    UnitsInStock=3,
                     UnitPrice=500
                 },
                 new Product
@@ -37,7 +38,7 @@ namespace DataAccess.Concrete.InMemory
                     ProductId =3,
                     CategoryId = 2,
                     ProductName="Telefon",
-                    UnitInStock=2,
+                    UnitsInStock=2,
                     UnitPrice=1500
                 },
                 new Product
@@ -45,7 +46,7 @@ namespace DataAccess.Concrete.InMemory
                     ProductId =4,
                     CategoryId = 2,
                     ProductName="Klavye",
-                    UnitInStock=65,
+                    UnitsInStock=65,
                     UnitPrice=150
                 },
                 new Product
@@ -53,7 +54,7 @@ namespace DataAccess.Concrete.InMemory
                     ProductId =5,
                     CategoryId = 2,
                     ProductName="Fare",
-                    UnitInStock=1,
+                    UnitsInStock=1,
                     UnitPrice=85
                 }
             };
@@ -106,13 +107,18 @@ namespace DataAccess.Concrete.InMemory
             return _products.Where(p => p.CategoryId == categoryId).ToList();
         }
 
+        public List<ProductDetailDto> GetProductDetails()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(Product product)
         {
             Product productToUpdate = _products.SingleOrDefault(p => p.ProductId == product.ProductId);
             productToUpdate.ProductName = product.ProductName;
             productToUpdate.CategoryId = product.CategoryId;
             productToUpdate.UnitPrice = product.UnitPrice;
-            productToUpdate.UnitInStock = product.UnitInStock;
+            productToUpdate.UnitsInStock = product.UnitsInStock;
 
         }
     }
