@@ -12,7 +12,7 @@ namespace DataAccess.Concrete.EntityFramework
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // ConnectionString yazacağımız yer.
-            optionsBuilder.UseSqlServer(@"Server = TITO; Database=Northwind;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server = DESKTOP-3I6K6PN; Database=NORTHWND;Trusted_Connection=true");
         }
 
         public DbSet<Product> Products { get; set; }

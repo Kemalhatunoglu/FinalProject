@@ -12,10 +12,10 @@ namespace ConsoleUI
             // Abstract klasötlerin içerisine referans tutucular konulacak yani soyut classlarımızı koyacağız.
             // Concrete klasörlerine somut classlarımızı modellerimizi koyacağız.
 
-            //ProductTest();
+            ProductTest();
             //CategoryTest();
 
-            
+
         }
 
         private static void CategoryTest()
