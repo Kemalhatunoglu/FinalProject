@@ -12,7 +12,7 @@ namespace ConsoleUI
             // Abstract klasötlerin içerisine referans tutucular konulacak yani soyut classlarımızı koyacağız.
             // Concrete klasörlerine somut classlarımızı modellerimizi koyacağız.
 
-            ProductTest();
+            //ProductTest();
             //CategoryTest();
 
 
@@ -22,29 +22,29 @@ namespace ConsoleUI
         {
             CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
 
-            foreach (var category in categoryManager.GetAll())
+            foreach (var category in categoryManager.GetAll().Data)
             {
                 Console.WriteLine(category.CategoryName);
             }
         }
 
-        private static void ProductTest()
-        {
-            ProductManager productManager = new ProductManager(new EfProductDal());
+        //private static void ProductTest()
+        //{
+        //    ProductManager productManager = new ProductManager(new EfProductDal(),new CategoryManager(new EfCategoryDal)));
 
-            var result = productManager.GetAll();
-            if (result.Success)
-            {
-                foreach (var item in result.Data)
-                {
-                    Console.WriteLine(item.ProductName);
+        //    var result = productManager.GetAll().Data;
+        //    if (result.Success)
+        //    {
+        //        foreach (var item in result.Data)
+        //        {
+        //            Console.WriteLine(item.ProductName);
                     
-                }
-            }
-            else
-            {
-                Console.WriteLine(result.Message);
-            }
-        }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine(result.Message);
+        //    }
+        ////}
     }
 }
