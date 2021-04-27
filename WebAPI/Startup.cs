@@ -42,7 +42,7 @@ namespace WebAPI
             services.AddControllers();
             //services.AddSingleton<IProductService,ProductManager>(); // Ýçerisinde data tutmuyorsak kullanýyoruz.
             //services.AddSingleton<IProductDal, EfProductDal>();
-
+            services.AddCors();
 
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
@@ -75,6 +75,7 @@ namespace WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseCors(builder => builder.WithOrigins("http://localhost:58993").AllowAnyHeader());
 
             app.UseHttpsRedirection();
 
