@@ -87,9 +87,7 @@ namespace Business.Concrete
             throw new NotImplementedException();
         }
 
-
-
-
+        #region method  
         private IResult CheckIfProductCountOfCategoryCorrect(int categoryId)
         {
             var result = _productDal.GetAll(x => x.CategoryId == categoryId).Count;
@@ -131,5 +129,7 @@ namespace Business.Concrete
             Add(product);
             return null;
         }
+        #endregion
+
     }
 }
